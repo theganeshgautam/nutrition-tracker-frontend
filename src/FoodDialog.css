@@ -28,3 +28,22 @@
   height: auto;
   margin-bottom: 10px;
 }
+
+.dialog-content div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.dialog-content label {
+  flex: 1;
+}
+
+.dialog-content input {
+  flex: 2;
+  margin-right: 10px;
+}
+
+.dialog-content span {
+  flex: 1;
+}

@@ -1,12 +1,33 @@
-// src/api.js
+// // src/api.js
+// import axios from 'axios';
+
+// const instance = axios.create({
+//   baseURL: 'http://localhost:5000', // Replace with your backend URL
+// });
+
+// // Add a request interceptor to include the token in the headers
+// instance.interceptors.request.use((config) => {
+//   const token = localStorage.getItem('token');
+//   if (token) {
+//     config.headers.Authorization = `Bearer ${token}`;
+//   }
+//   return config;
+// }, (error) => {
+//   return Promise.reject(error);
+// });
+
+// export default instance;
+
+
+
+
 import axios from 'axios';
 
-const instance = axios.create({
-  baseURL: 'http://localhost:5000', // Replace with your backend URL
+const api = axios.create({
+  baseURL: 'http://localhost:5000',
 });
 
-// Add a request interceptor to include the token in the headers
-instance.interceptors.request.use((config) => {
+api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
@@ -16,4 +37,4 @@ instance.interceptors.request.use((config) => {
   return Promise.reject(error);
 });
 
-export default instance;
+export default api;
